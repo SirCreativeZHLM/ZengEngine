@@ -1,0 +1,189 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "event_start",
+    "id": "b49",
+    "next": {
+     "block": {
+      "type": "ctl_forever",
+      "id": "b48",
+      "inputs": {
+       "DO": {
+        "block": {
+         "type": "mo_turn",
+         "id": "b47",
+         "fields": {
+          "DIR": "LEFT"
+         },
+         "inputs": {
+          "DEG": {
+           "shadow": {
+            "type": "math_number",
+            "fields": {
+             "NUM": 3
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "x": 20,
+    "y": 20
+   },
+   {
+    "type": "event_touch",
+    "id": "b60",
+    "fields": {
+     "OBJ": "Player"
+    },
+    "next": {
+     "block": {
+      "type": "math_change",
+      "id": "b50",
+      "fields": {
+       "VAR": {
+        "id": "v_score"
+       }
+      },
+      "inputs": {
+       "DELTA": {
+        "shadow": {
+         "type": "math_number",
+         "fields": {
+          "NUM": 1
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "lk_hud",
+        "id": "b52",
+        "inputs": {
+         "LABEL": {
+          "shadow": {
+           "type": "text",
+           "fields": {
+            "TEXT": "Score"
+           }
+          }
+         },
+         "VALUE": {
+          "block": {
+           "type": "variables_get",
+           "id": "b51",
+           "fields": {
+            "VAR": {
+             "id": "v_score"
+            }
+           }
+          }
+         }
+        },
+        "next": {
+         "block": {
+          "type": "sd_play",
+          "id": "b53",
+          "fields": {
+           "FILE": "sounds/pop.wav"
+          },
+          "next": {
+           "block": {
+            "type": "ctl_if",
+            "id": "b58",
+            "inputs": {
+             "COND": {
+              "block": {
+               "type": "op_compare",
+               "id": "b55",
+               "fields": {
+                "OP": "GTE"
+               },
+               "inputs": {
+                "A": {
+                 "block": {
+                  "type": "variables_get",
+                  "id": "b54",
+                  "fields": {
+                   "VAR": {
+                    "id": "v_score"
+                   }
+                  }
+                 }
+                },
+                "B": {
+                 "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                   "NUM": 6
+                  }
+                 }
+                }
+               }
+              }
+             },
+             "DO": {
+              "block": {
+               "type": "lk_say",
+               "id": "b56",
+               "inputs": {
+                "TEXT": {
+                 "shadow": {
+                  "type": "text",
+                  "fields": {
+                   "TEXT": "You got them all!"
+                  }
+                 }
+                },
+                "SECS": {
+                 "shadow": {
+                  "type": "math_number",
+                  "fields": {
+                   "NUM": 0
+                  }
+                 }
+                }
+               },
+               "next": {
+                "block": {
+                 "type": "sd_play",
+                 "id": "b57",
+                 "fields": {
+                  "FILE": "sounds/win.wav"
+                 }
+                }
+               }
+              }
+             }
+            },
+            "next": {
+             "block": {
+              "type": "ctl_delete_me",
+              "id": "b59"
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "x": 20,
+    "y": 240
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "score",
+   "id": "v_score"
+  }
+ ]
+}

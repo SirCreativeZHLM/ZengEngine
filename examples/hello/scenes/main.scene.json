@@ -1,0 +1,19 @@
+{
+  "environment": { "sky": [0.45, 0.65, 0.9], "ambient": 400, "bloom": true },
+  "entities": [
+    { "name": "Ground", "transform": { "position": [0, -0.5, 0], "scale": [12, 0.2, 12] },
+      "shape": { "type": "cube", "size": 1.0 }, "material": { "color": [0.35, 0.55, 0.35], "roughness": 0.9 },
+      "physics": { "body": "static" } },
+    { "name": "Cube", "transform": { "position": [0, 0.5, 0] },
+      "shape": { "type": "cube", "size": 1.0 }, "material": { "color": [0.9, 0.3, 0.2], "roughness": 0.4 },
+      "script": "scripts/player.blocks.json" },
+    { "name": "Coin", "transform": { "position": [2, 0.5, 0] },
+      "shape": { "type": "cylinder", "radius": 0.4, "height": 0.1 }, "material": { "color": [1, 0.8, 0.1], "metallic": 0.9, "roughness": 0.3, "emissive": [0.6, 0.4, 0] },
+      "script": "scripts/coin.blocks.json" },
+    { "name": "Ball", "transform": { "position": [-2, 4, 0] },
+      "shape": { "type": "sphere", "radius": 0.5 }, "material": { "color": [0.2, 0.5, 0.9], "metallic": 0.8, "roughness": 0.2 },
+      "physics": { "body": "dynamic", "bounce": 0.7 } },
+    { "name": "Sun", "transform": { "position": [4, 8, 4], "look_at": [0, 0, 0] },
+      "light": { "type": "directional", "illuminance": 10000, "shadows": true } }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "event_start",
+    "next": {
+     "block": {
+      "type": "ctl_forever",
+      "inputs": {
+       "DO": {
+        "block": {
+         "type": "mo_turn",
+         "fields": {
+          "DIR": "LEFT"
+         },
+         "inputs": {
+          "DEG": {
+           "shadow": {
+            "type": "math_number",
+            "fields": {
+             "NUM": 2
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": []
+}

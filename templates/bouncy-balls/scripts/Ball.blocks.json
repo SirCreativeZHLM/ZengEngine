@@ -1,0 +1,164 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "event_start",
+    "id": "b109",
+    "next": {
+     "block": {
+      "type": "ctl_forever",
+      "id": "b108",
+      "inputs": {
+       "DO": {
+        "block": {
+         "type": "mo_goto",
+         "id": "b105",
+         "inputs": {
+          "X": {
+           "block": {
+            "type": "op_random",
+            "id": "b103",
+            "inputs": {
+             "A": {
+              "shadow": {
+               "type": "math_number",
+               "fields": {
+                "NUM": -5
+               }
+              }
+             },
+             "B": {
+              "shadow": {
+               "type": "math_number",
+               "fields": {
+                "NUM": 5
+               }
+              }
+             }
+            }
+           }
+          },
+          "Y": {
+           "shadow": {
+            "type": "math_number",
+            "fields": {
+             "NUM": 9
+            }
+           }
+          },
+          "Z": {
+           "block": {
+            "type": "op_random",
+            "id": "b104",
+            "inputs": {
+             "A": {
+              "shadow": {
+               "type": "math_number",
+               "fields": {
+                "NUM": -5
+               }
+              }
+             },
+             "B": {
+              "shadow": {
+               "type": "math_number",
+               "fields": {
+                "NUM": 5
+               }
+              }
+             }
+            }
+           }
+          }
+         },
+         "next": {
+          "block": {
+           "type": "ctl_clone",
+           "id": "b106",
+           "fields": {
+            "OBJ": "_ME_"
+           },
+           "next": {
+            "block": {
+             "type": "ctl_wait",
+             "id": "b107",
+             "inputs": {
+              "SECS": {
+               "shadow": {
+                "type": "math_number",
+                "fields": {
+                 "NUM": 0.4
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "x": 20,
+    "y": 20
+   },
+   {
+    "type": "event_copy",
+    "id": "b114",
+    "next": {
+     "block": {
+      "type": "ph_body",
+      "id": "b110",
+      "fields": {
+       "TYPE": "dynamic"
+      },
+      "next": {
+       "block": {
+        "type": "ph_bounce",
+        "id": "b111",
+        "inputs": {
+         "N": {
+          "shadow": {
+           "type": "math_number",
+           "fields": {
+            "NUM": 0.85
+           }
+          }
+         }
+        },
+        "next": {
+         "block": {
+          "type": "ctl_wait",
+          "id": "b112",
+          "inputs": {
+           "SECS": {
+            "shadow": {
+             "type": "math_number",
+             "fields": {
+              "NUM": 10
+             }
+            }
+           }
+          },
+          "next": {
+           "block": {
+            "type": "ctl_delete_me",
+            "id": "b113"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "x": 20,
+    "y": 240
+   }
+  ]
+ },
+ "variables": []
+}

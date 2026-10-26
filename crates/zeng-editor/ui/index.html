@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZengEngine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand"><span class="logo">Z</span><b>ZengEngine</b></div>
+  <div id="projname" class="projname"></div>
+  <div class="spacer"></div>
+  <button id="btn-undo" class="ghost" title="Undo (Cmd/Ctrl+Z)">Undo</button>
+  <button id="btn-redo" class="ghost" title="Redo (Shift+Cmd/Ctrl+Z)">Redo</button>
+  <span class="sep"></span>
+  <button id="btn-folder" class="ghost" title="Show the game folder">Folder</button>
+  <button id="btn-export" class="ghost" title="Make a finished game app you can share">Export</button>
+  <button id="btn-home" class="ghost" title="Back to the start screen">Start</button>
+  <button id="btn-play" class="play" title="Start the game on the stage (Cmd/Ctrl+Enter)">&#9873; Start</button>
+  <button id="btn-stop" class="stop" hidden>&#9632; Stop</button>
+</header>
+
+<main id="app">
+  <aside id="left">
+    <section>
+      <div class="sec-head"><h3>Objects</h3>
+        <div class="menu-wrap"><button id="btn-add" class="small">+ Add</button>
+          <div id="add-menu" class="menu" hidden></div></div>
+      </div>
+      <ul id="tree" class="tree"></ul>
+    </section>
+    <section>
+      <div class="sec-head"><h3>Files</h3><button id="btn-import" class="small">+ Import</button></div>
+      <div id="assets" class="assets"></div>
+    </section>
+  </aside>
+
+  <section id="center">
+    <nav class="tabs">
+      <button data-tab="blocks" class="tab on">Blocks</button>
+      <button data-tab="layout" class="tab">Layout</button>
+      <div class="spacer"></div>
+      <span id="tabnote" class="tabnote"></span>
+    </nav>
+    <div id="pane-blocks" class="pane on">
+      <div id="blockly"></div>
+      <div id="noscript" class="empty" hidden>
+        <div><h2>Pick an object</h2><p>Click an object on the left to give it blocks.<br>Add one with <b>+ Add</b> if the list is empty.</p></div>
+      </div>
+    </div>
+    <div id="pane-layout" class="pane">
+      <div class="layout-bar">
+        <button id="view-top" class="small on">Top view</button>
+        <button id="view-side" class="small">Side view</button>
+        <span class="hint">Drag objects to move them. Scroll to zoom, drag the background to pan.</span>
+      </div>
+      <canvas id="layout"></canvas>
+    </div>
+    <div id="problems" class="problems" hidden>
+      <div class="sec-head"><h3>Problems</h3><button id="btn-clear-problems" class="small">Clear</button></div>
+      <ul id="problem-list"></ul>
+    </div>
+  </section>
+
+  <aside id="right">
+    <div id="stage-wrap">
+      <div class="stage-bar">
+        <button id="stage-go" class="flag" title="Start the game here (Cmd/Ctrl+Enter)">&#9873;</button>
+        <button id="stage-stop" class="sq" title="Stop">&#9632;</button>
+        <span class="spacer"></span>
+        <button id="stage-window" class="small" title="Play in its own big window">Big window</button>
+      </div>
+      <div class="stage-box">
+        <canvas id="stage" width="640" height="480" tabindex="0"></canvas>
+        <div id="stage-idle" class="stage-idle"><div><b>Your game shows here</b><br>Press the green flag to try it.</div></div>
+      </div>
+      <div class="stage-hint" id="stage-hint">Click the stage, then use your keyboard and mouse like in the real game.</div>
+    </div>
+    <div id="inspector"></div>
+  </aside>
+</main>
+
+<div id="home" class="overlay">
+  <div class="home-card">
+    <div class="home-head"><span class="logo big">Z</span><div><h1>ZengEngine</h1><p>Make 3D games by snapping blocks together.</p></div></div>
+    <div id="home-warn" class="warn" hidden>The game player was not found next to the editor, so Play and Export will not work.</div>
+    <h2>Start a new game</h2>
+    <div id="templates" class="templates"></div>
+    <div class="row">
+      <input id="newname" type="text" placeholder="Name your game" maxlength="40">
+      <button id="btn-new" class="play">Create game</button>
+    </div>
+    <div id="home-err" class="err"></div>
+    <h2>Or keep going</h2>
+    <div class="row"><button id="btn-open" class="ghost">Open a game folder…</button></div>
+    <ul id="recent" class="recent"></ul>
+  </div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="vendor/blockly_compressed.js"></script>
+<script src="vendor/blocks_compressed.js"></script>
+<script src="vendor/msg_en.js"></script>
+<script src="blocks.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

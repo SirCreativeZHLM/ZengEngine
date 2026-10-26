@@ -1,0 +1,246 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "event_start",
+    "id": "b18",
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "id": "b1",
+      "fields": {
+       "VAR": {
+        "id": "v_score"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "shadow": {
+         "type": "math_number",
+         "fields": {
+          "NUM": 0
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "lk_hud",
+        "id": "b3",
+        "inputs": {
+         "LABEL": {
+          "shadow": {
+           "type": "text",
+           "fields": {
+            "TEXT": "Score"
+           }
+          }
+         },
+         "VALUE": {
+          "block": {
+           "type": "variables_get",
+           "id": "b2",
+           "fields": {
+            "VAR": {
+             "id": "v_score"
+            }
+           }
+          }
+         }
+        },
+        "next": {
+         "block": {
+          "type": "lk_cam_follow",
+          "id": "b4",
+          "fields": {
+           "OBJ": "Player"
+          },
+          "inputs": {
+           "DIST": {
+            "shadow": {
+             "type": "math_number",
+             "fields": {
+              "NUM": 9
+             }
+            }
+           },
+           "HEIGHT": {
+            "shadow": {
+             "type": "math_number",
+             "fields": {
+              "NUM": 7
+             }
+            }
+           }
+          },
+          "next": {
+           "block": {
+            "type": "ctl_forever",
+            "id": "b17",
+            "inputs": {
+             "DO": {
+              "block": {
+               "type": "ctl_if",
+               "id": "b7",
+               "inputs": {
+                "COND": {
+                 "block": {
+                  "type": "se_key",
+                  "id": "b6",
+                  "fields": {
+                   "KEY": "W"
+                  }
+                 }
+                },
+                "DO": {
+                 "block": {
+                  "type": "mo_move",
+                  "id": "b5",
+                  "fields": {
+                   "DIR": "FORWARD"
+                  },
+                  "inputs": {
+                   "N": {
+                    "shadow": {
+                     "type": "math_number",
+                     "fields": {
+                      "NUM": 0.12
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               },
+               "next": {
+                "block": {
+                 "type": "ctl_if",
+                 "id": "b10",
+                 "inputs": {
+                  "COND": {
+                   "block": {
+                    "type": "se_key",
+                    "id": "b9",
+                    "fields": {
+                     "KEY": "S"
+                    }
+                   }
+                  },
+                  "DO": {
+                   "block": {
+                    "type": "mo_move",
+                    "id": "b8",
+                    "fields": {
+                     "DIR": "BACK"
+                    },
+                    "inputs": {
+                     "N": {
+                      "shadow": {
+                       "type": "math_number",
+                       "fields": {
+                        "NUM": 0.08
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 "next": {
+                  "block": {
+                   "type": "ctl_if",
+                   "id": "b13",
+                   "inputs": {
+                    "COND": {
+                     "block": {
+                      "type": "se_key",
+                      "id": "b12",
+                      "fields": {
+                       "KEY": "A"
+                      }
+                     }
+                    },
+                    "DO": {
+                     "block": {
+                      "type": "mo_turn",
+                      "id": "b11",
+                      "fields": {
+                       "DIR": "LEFT"
+                      },
+                      "inputs": {
+                       "DEG": {
+                        "shadow": {
+                         "type": "math_number",
+                         "fields": {
+                          "NUM": 3
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   },
+                   "next": {
+                    "block": {
+                     "type": "ctl_if",
+                     "id": "b16",
+                     "inputs": {
+                      "COND": {
+                       "block": {
+                        "type": "se_key",
+                        "id": "b15",
+                        "fields": {
+                         "KEY": "D"
+                        }
+                       }
+                      },
+                      "DO": {
+                       "block": {
+                        "type": "mo_turn",
+                        "id": "b14",
+                        "fields": {
+                         "DIR": "RIGHT"
+                        },
+                        "inputs": {
+                         "DEG": {
+                          "shadow": {
+                           "type": "math_number",
+                           "fields": {
+                            "NUM": 3
+                           }
+                          }
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "x": 20,
+    "y": 20
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "score",
+   "id": "v_score"
+  }
+ ]
+}

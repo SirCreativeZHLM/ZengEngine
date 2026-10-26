@@ -1,0 +1,200 @@
+{
+ "blocks": {
+  "languageVersion": 0,
+  "blocks": [
+   {
+    "type": "event_start",
+    "next": {
+     "block": {
+      "type": "variables_set",
+      "fields": {
+       "VAR": {
+        "id": "v1"
+       }
+      },
+      "inputs": {
+       "VALUE": {
+        "shadow": {
+         "type": "math_number",
+         "fields": {
+          "NUM": 0
+         }
+        }
+       }
+      },
+      "next": {
+       "block": {
+        "type": "lk_hud",
+        "inputs": {
+         "LABEL": {
+          "shadow": {
+           "type": "text",
+           "fields": {
+            "TEXT": "Score"
+           }
+          }
+         },
+         "VALUE": {
+          "block": {
+           "type": "variables_get",
+           "fields": {
+            "VAR": {
+             "id": "v1"
+            }
+           }
+          }
+         }
+        },
+        "next": {
+         "block": {
+          "type": "ctl_forever",
+          "inputs": {
+           "DO": {
+            "block": {
+             "type": "ctl_if",
+             "inputs": {
+              "COND": {
+               "block": {
+                "type": "se_key",
+                "fields": {
+                 "KEY": "D"
+                }
+               }
+              },
+              "DO": {
+               "block": {
+                "type": "mo_change",
+                "fields": {
+                 "AXIS": "X"
+                },
+                "inputs": {
+                 "N": {
+                  "shadow": {
+                   "type": "math_number",
+                   "fields": {
+                    "NUM": 0.08
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             },
+             "next": {
+              "block": {
+               "type": "ctl_if",
+               "inputs": {
+                "COND": {
+                 "block": {
+                  "type": "se_key",
+                  "fields": {
+                   "KEY": "A"
+                  }
+                 }
+                },
+                "DO": {
+                 "block": {
+                  "type": "mo_change",
+                  "fields": {
+                   "AXIS": "X"
+                  },
+                  "inputs": {
+                   "N": {
+                    "shadow": {
+                     "type": "math_number",
+                     "fields": {
+                      "NUM": -0.08
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               },
+               "next": {
+                "block": {
+                 "type": "ctl_if",
+                 "inputs": {
+                  "COND": {
+                   "block": {
+                    "type": "se_key",
+                    "fields": {
+                     "KEY": "W"
+                    }
+                   }
+                  },
+                  "DO": {
+                   "block": {
+                    "type": "mo_change",
+                    "fields": {
+                     "AXIS": "Z"
+                    },
+                    "inputs": {
+                     "N": {
+                      "shadow": {
+                       "type": "math_number",
+                       "fields": {
+                        "NUM": -0.08
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 },
+                 "next": {
+                  "block": {
+                   "type": "ctl_if",
+                   "inputs": {
+                    "COND": {
+                     "block": {
+                      "type": "se_key",
+                      "fields": {
+                       "KEY": "S"
+                      }
+                     }
+                    },
+                    "DO": {
+                     "block": {
+                      "type": "mo_change",
+                      "fields": {
+                       "AXIS": "Z"
+                      },
+                      "inputs": {
+                       "N": {
+                        "shadow": {
+                         "type": "math_number",
+                         "fields": {
+                          "NUM": 0.08
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "variables": [
+  {
+   "name": "score",
+   "id": "v1"
+  }
+ ]
+}

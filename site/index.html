@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZengEngine</title>
+<meta name="description" content="ZengEngine is a free 3D game maker you program with Scratch-style blocks. Press the green flag and your game runs in the corner of the editor.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/zb.css">
+<link rel="stylesheet" href="engine.css">
+<script src="/zb.js" defer></script>
+</head>
+<body>
+<div data-zb-top data-zb-name="ZengEngine" data-zb-links="Blocks|#blocks,Stage|#stage,Starters|#starters,Limits|#limits,Download|#download"></div>
+
+<main>
+<div class="wrap hero one">
+  <div>
+    <h1>Make a 3D game by snapping blocks.</h1>
+    <p class="lede">ZengEngine is a free game maker for your own computer. You build with blocks like Scratch, but the game is real 3D with lights, shadows, physics and sound. Press the green flag and it plays in the corner of the editor.</p>
+    <div class="actions">
+      <a class="btn primary" href="#download">Download ZengEngine</a>
+      <a class="btn" href="https://github.com/SirCreativeZHLM/ZengEngine">Read the source</a>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <figure class="shot wide">
+    <img src="img/editor-blocks.webp" width="1600" height="1036" alt="The ZengEngine editor on macOS: a list of objects on the left, coloured Scratch-style blocks in the middle that move a player cube with W A S D, and the running game in a stage at the top right.">
+    <figcaption class="cap">The real editor on macOS, running the Coin Collector starter game.</figcaption>
+  </figure>
+</div>
+
+<section id="blocks">
+  <div class="wrap">
+    <h2>Blocks you already know how to read</h2>
+    <p class="lead">Drag blocks together, like Scratch. There is no typing and no syntax to get wrong. Every object in your world has its own script.</p>
+    <div class="tiles">
+      <div class="tile"><h3>Events and control</h3><p>When the game starts, when a key is pressed, when I touch something, when I am clicked, every few seconds. Wait, repeat, forever, if, send a message, make a copy.</p></div>
+      <div class="tile"><h3>3D motion and looks</h3><p>Move, turn, glide, look at another object. Change colour, show a score, make the camera follow the player, set the sky.</p></div>
+      <div class="tile"><h3>Physics and sound</h3><p>Let things fall and bounce, make solid walls, push and set speed, set gravity. Play your own sounds. Variables, lists and your own functions are there when you want more.</p></div>
+    </div>
+    <p class="lead" style="margin-top:36px">When a block is wrong, the problem shows up in plain words under the editor. Click it and the editor jumps to that block.</p>
+  </div>
+</section>
+
+<section id="stage">
+  <div class="wrap split">
+    <div>
+      <h2>The stage, top right</h2>
+      <p class="lead">Press the green flag and your game runs right there, like the Scratch stage. Click it and your keyboard and mouse go to the game. Change a block, a colour or a position and the running game updates without a restart.</p>
+      <p class="lead" style="margin-top:16px">Want it bigger? One button opens the same game in its own large window.</p>
+    </div>
+    <figure class="shot">
+      <img src="img/editor-balls.webp" width="1600" height="1036" alt="The ZengEngine editor with the Bouncy Balls starter game running in the stage: orange balls falling onto a ramp.">
+      <figcaption class="cap">Bouncy Balls: a timer makes copies of a ball and physics does the rest.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="real">
+  <div class="wrap">
+    <h2>Real 3D underneath</h2>
+    <p class="lead">The game is drawn by Bevy, an open-source Rust game engine, on Metal, Vulkan or DirectX.</p>
+    <ul class="facts">
+      <li><strong>Lit and shadowed</strong>Metal and rough materials, a sun, lamps and spotlights, shadows, glow and fog.</li>
+      <li><strong>Your own models</strong>Import 3D models (.glb), pictures and sounds with one button.</li>
+      <li><strong>Physics</strong>Falling, bouncing and solid objects, from the Avian physics engine.</li>
+      <li><strong>Pick your quality</strong>Fast for older computers, Nice, or Best with ambient shadows.</li>
+      <li><strong>Plain files</strong>A game is a folder of text files, so it works with git.</li>
+      <li><strong>Export</strong>One button turns your game into an app you can share. Everything it needs is inside.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="starters">
+  <div class="wrap">
+    <h2>Three starter games</h2>
+    <p class="lead">Each one opens with working blocks you can change.</p>
+    <ol class="layers">
+      <li><h3>Coin Collector</h3><p>Walk around with W A S D and grab every coin. Teaches keys, score, touching and a following camera.</p></li>
+      <li><h3>Bouncy Balls</h3><p>Balls rain down and bounce off a ramp. Teaches timers, copies and physics.</p></li>
+      <li><h3>Blank World</h3><p>A floor, a light and one cube. Start from nothing.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap">
+    <h2>What it is not, yet</h2>
+    <p class="lead">This is version 0.1. It makes small and medium 3D games well. Be clear about the edges.</p>
+    <ul class="limits">
+      <li><strong>It is not a AAA game pipeline.</strong> Blocks are interpreted and the engine is young. Think collecting games, physics toys and arcade games, not open-world blockbusters.</li>
+      <li><strong>No 3D view inside the editor.</strong> You arrange objects on a flat map from above or the side, and the stage shows the real 3D.</li>
+      <li><strong>Untested on some systems.</strong> The Windows and Linux builds compile in the cloud, but have not been run on a real machine yet. Only the Mac build has been used by hand.</li>
+      <li><strong>Missing today:</strong> animation graphs, terrain, networking, VR and phones. Export makes a game for the same kind of computer you are on.</li>
+      <li><strong>It sends nothing anywhere.</strong> No accounts, no servers, no telemetry. Games you make belong to you, with no fees and no royalties.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <h2>Get ZengEngine</h2>
+    <p class="lead">No installer and no account. Unzip it and open ZengEngine. Version 0.1.0.</p>
+    <table class="dl">
+      <tbody>
+        <tr><th scope="row">macOS</th><td>Apple silicon (M1 or newer). Not notarized yet: the first time, right-click the app and choose Open. Used by hand and working.</td><td><a href="https://github.com/SirCreativeZHLM/ZengEngine/releases/download/v0.1.0/ZengEngine-0.1.0-macos.zip">Download</a></td></tr>
+        <tr><th scope="row">Windows</th><td>64-bit, Windows 10 or 11 with the Edge WebView2 runtime. Built but not yet run on a real PC, so expect rough edges.</td><td><a href="https://github.com/SirCreativeZHLM/ZengEngine/releases/download/v0.1.0/ZengEngine-0.1.0-windows.zip">Download</a></td></tr>
+        <tr><th scope="row">Linux</th><td>64-bit PC (x86_64). Needs WebKitGTK 4.1 and GTK 3. Built but not yet run on a real machine.</td><td><a href="https://github.com/SirCreativeZHLM/ZengEngine/releases/download/v0.1.0/ZengEngine-0.1.0-linux.tar.gz">Download</a></td></tr>
+        <tr><th scope="row">Linux ARM</th><td>For ARM chips such as a Raspberry Pi. The game player has run; the editor window has not been opened.</td><td><a href="https://github.com/SirCreativeZHLM/ZengEngine/releases/download/v0.1.0/ZengEngine-0.1.0-linux-arm64.tar.gz">Download</a></td></tr>
+      </tbody>
+    </table>
+    <p class="fine">There is no Intel Mac build yet. All files are on the <a href="https://github.com/SirCreativeZHLM/ZengEngine/releases/latest">release page</a>.</p>
+    <pre class="snip"><span class="dim"># or build it yourself with Rust</span>
+git clone https://github.com/SirCreativeZHLM/ZengEngine
+cd ZengEngine
+cargo run --release -p zeng-editor</pre>
+  </div>
+</section>
+</main>
+
+<div data-zb-foot data-zb-note="ZengEngine is free software, licensed MIT or Apache-2.0, at your choice. Block editor by Blockly, game engine by Bevy."></div>
+</body>
+</html>
